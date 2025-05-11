@@ -1,0 +1,113 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 26 22% 8%;
+    --foreground: 39 77% 83%;
+
+    --card: 26 24% 11%;
+    --card-foreground: 39 77% 83%;
+
+    --popover: 26 24% 11%;
+    --popover-foreground: 39 77% 83%;
+
+    --primary: 43 66% 52%; /* Gold */
+    --primary-foreground: 26 22% 8%;
+
+    --secondary: 25 45% 56%; /* Terracotta */
+    --secondary-foreground: 26 22% 8%;
+
+    --muted: 26 20% 16%;
+    --muted-foreground: 39 40% 70%;
+
+    --accent: 221 39% 15%; /* Deep Blue */
+    --accent-foreground: 39 77% 83%;
+
+    --destructive: 0 63% 42%;
+    --destructive-foreground: 39 77% 83%;
+
+    --border: 26 26% 22%;
+    --input: 26 26% 22%;
+    --ring: 43 66% 52%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-nyala text-ethiopia-gold;
+  }
+
+  .pattern-overlay {
+    position: relative;
+  }
+
+  .pattern-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTVMMTUgMzBNMzAgMTVMNDUgMzBNMzAgNDVMMTUgMzBNMzAgNDVMNDUgMzAiIHN0cm9rZT0iI0Q0QUYzNzMwIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=');
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Audio controls styling */
+  audio::-webkit-media-controls-panel {
+    @apply bg-ethiopia-night;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    @apply text-ethiopia-gold;
+  }
+
+  /* Custom container class */
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-ethiopia-gold text-ethiopia-night px-6 py-3 rounded-md font-medium hover:bg-ethiopia-darkGold transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-ethiopia-gold text-ethiopia-gold px-6 py-3 rounded-md font-medium hover:bg-ethiopia-gold/10 transition-colors duration-200;
+  }
+
+  /* Section styling */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Card styles */
+  .card-hover {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  /* Ethiopian decorative border */
+  .ethiopian-border {
+    @apply relative;
+  }
+  
+  .ethiopian-border::after {
+    content: '';
+    @apply block h-1 bg-gradient-to-r from-ethiopia-red via-ethiopia-gold to-ethiopia-green mt-2;
+  }
+}
